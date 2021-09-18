@@ -1,0 +1,478 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap');
+*,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 1000px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+ :root {
+    --firstColor: #ff003c;
+    --secondColor: #0b1c39;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--secondColor);
+}
+
+p::selection {
+    background-color: black;
+    color: gold;
+}
+
+h1::selection {
+    background-color: black;
+    color: gold;
+}
+
+h1:hover,
+p:hover {
+    text-shadow: 1px 1px rgb(92, 53, 53);
+}
+
+
+/* nav  */
+
+nav {
+    display: flex;
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+}
+
+nav img {
+    width: 25%;
+}
+
+nav .list {
+    width: 50%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    font-size: large;
+    font-weight: 900;
+    background: #f9f2f28a;
+    border-radius: 42px;
+}
+
+nav .list ul {}
+
+nav .list li {
+    margin-top: 50px;
+    padding: 17px;
+    text-transform: capitalize;
+}
+
+.list-items {
+    background-color: #fff;
+    border-top: 6px solid var(--firstColor);
+    position: absolute;
+    top: 70%;
+    opacity: 0;
+    transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -ms-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+}
+
+.list-items::before {
+    content: "";
+    position: absolute;
+    top: -11%;
+    /* width: 10px; */
+    border-width: 10px;
+    border-style: solid;
+    /* height: 10px; */
+    border-bottom-color: var(--firstColor);
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+}
+
+nav #menu {
+    opacity: 0;
+}
+
+nav label {
+    opacity: 0;
+}
+
+
+/* hover on li */
+
+nav .list li:hover a {
+    color: var(--firstColor);
+}
+
+nav .list li:hover .list-items {
+    opacity: 1;
+}
+
+nav .list li:hover .list-items a {
+    color: var(--secondColor);
+}
+
+
+/* end hover on li  */
+
+nav .icons {
+    width: 25%;
+    text-align: center;
+    align-self: center;
+}
+
+
+/* .fa-search:before {
+            content: "\f002";
+        }
+        
+        .fa-user:before {
+            content: "\f007";
+        }
+        
+        .fa-shopping-cart:before {
+            content: "\f07a";
+        } */
+
+.fa,
+.fas {
+    padding: 10px;
+}
+
+
+/* hover on icons  */
+
+.fas:hover {
+    color: var(--firstColor);
+}
+
+nav .list :nth-child(4)::after {
+    content: "HOT";
+    position: absolute;
+    color: #fff;
+    background-color: var(--firstColor);
+    top: 20%;
+    width: 39px;
+    /* height: 20px; */
+    right: 46%;
+    text-align: center;
+    border-radius: 11px;
+    filter: drop-shadow(2px 4px 6px #ccc);
+    font-size: small;
+    font-weight: 700;
+    padding: 3px 8px;
+}
+
+
+/* SECTION 1 */
+
+.sec1 {
+    margin-top: 20%;
+    display: flex;
+}
+
+.sec1 div {
+    text-align: center;
+    align-self: center;
+}
+
+.sec1 h1 {
+    font-size: 96px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 26px;
+    color: #0b1c39
+}
+
+.sec1 p {
+    font-size: x-large;
+    font-weight: 700;
+}
+
+.sec1 button {
+    width: 30%;
+    font-size: large;
+    margin-top: 10%;
+    height: 53px;
+    color: #fff;
+    background: #4a4a4b;
+    position: relative;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    cursor: pointer;
+}
+
+.sec1 button:hover {
+    background: var(--firstColor);
+    text-decoration: underline;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+
+/* END OF SECTION 1 */
+
+
+/* my-checkBox */
+
+
+/* my-checkBox
+    Custom Checkbox Design using html and css | Pure CSS Custom Checkbox
+
+    https://www.youtube.com/watch?v=7Rjt7Rjyjqw&list=PLwJhhWUZudKoCFi2MyC9ZD6XX082goO_S&index=28&ab_channel=Divinector */
+
+.my-checkBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #242424;
+    margin-top: 30%;
+    padding: 30px;
+}
+
+.my-checkBox h1 {
+    position: relative;
+    right: 48px;
+    border: 3px solid red;
+    border-radius: 14px;
+    color: wheat;
+    width: 30%;
+    text-align: center;
+}
+
+.my-checkBox label {
+    background-color: gray;
+    cursor: pointer;
+    width: 200px;
+    height: 50px;
+    border: 5px solid white;
+    border-radius: 30px;
+    position: relative;
+}
+
+.my-checkBox input {
+    position: relative;
+    left: 27px;
+    /*  */
+    display: none;
+}
+
+.my-checkBox label::after {
+    content: "on";
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    position: absolute;
+    -o-border-radius: 50%;
+    background-color: #E91E63;
+    /*tocenterthetext*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    font-weight: 900;
+}
+
+.my-checkBox input:checked+label::after {
+    left: 79%;
+    content: "off";
+    background-color: #4868db;
+}
+
+.my-checkBox input:checked+label {
+    background-color: gold;
+    border: 5px solid black;
+}
+
+
+/* flex box */
+
+.flex-box2 {
+    display: inline-flex;
+    width: 25%;
+    background: #fff;
+    margin: 20px;
+    padding: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 4px;
+    border: 4px solid black;
+    transition: all 1s;
+    position: relative;
+    margin-top: 200px;
+    -webkit-transition: all 2s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+}
+
+.flex-box2 img {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    width: 50%;
+    background-position: center;
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+}
+
+.flex-box2 p {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.flex-box2:hover {
+    background: #333;
+}
+
+.flex-box2:hover p {
+    color: #E91E63;
+}
+
+.flex-box2:hover img {
+    position: absolute;
+    top: -200%;
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
+}
+
+
+/* End flex box */
+
+
+/* media query */
+
+@media (max-width:1119px) {}
+
+@media (max-width:991px) {
+    nav img {
+        width: 20%;
+        height: 20%;
+    }
+    nav label {
+        opacity: 1;
+        position: absolute;
+        left: 50%;
+    }
+    nav .icons {
+        width: 25%;
+        text-align: center;
+        align-self: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        order: 0;
+    }
+    nav .list {
+        opacity: 0;
+        display: block;
+        text-align: center;
+        position: absolute;
+        left: 19%;
+        top: 79%;
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+    }
+    nav .list li {
+        margin-top: unset;
+    }
+    .list-items {
+        background-color: #ec94b2;
+        border-top: unset;
+        position: unset;
+        top: unset;
+        opacity: 1;
+        display: none;
+        border-radius: 20px;
+        -webkit-border-radius: 20px;
+        -moz-border-radius: 20px;
+        -ms-border-radius: 20px;
+        -o-border-radius: 20px;
+    }
+    li:hover .list-items {
+        display: block;
+    }
+    li:hover .list-items::before {
+        display: none;
+    }
+    #menu:checked~.list {
+        opacity: 1;
+        width: 20%;
+        /* height: 20%; */
+        position: absolute;
+        left: 40%;
+        background: #cddc39;
+        top: 68%;
+        text-align: center;
+        display: unset;
+    }
+    nav .list :nth-child(4)::after {
+        content: unset;
+        position: unset;
+        color: unset;
+        background-color: unset;
+        top: unset;
+        width: unset;
+        /*height: 20px;
+        */
+        right: unset;
+        text-align: unset;
+        border-radius: unset;
+        filter: unset;
+        font-size: unset;
+        font-weight: unset;
+        padding: unset;
+        -webkit-border-radius: unset;
+        -moz-border-radius: unset;
+        -ms-border-radius: unset;
+        -o-border-radius: unset;
+        -webkit-filter: unset;
+    }
+}
+
+@media (max-width:767px) {
+    a {
+        color: var(--firstColor);
+    }
+    a:hover {
+        color: var(--secondColor);
+    }
+}
+
+@media (max-width:575px) {}
+
+
+/* End of media query */
