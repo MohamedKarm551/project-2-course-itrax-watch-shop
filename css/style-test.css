@@ -181,10 +181,12 @@ nav .list :nth-child(4)::after {
 .sec1 {
     margin-top: 20%;
     display: flex;
+    margin: auto;
+    width: 80%;
 }
 
 .sec1 div {
-    text-align: center;
+    text-align: left;
     align-self: center;
 }
 
@@ -215,9 +217,21 @@ nav .list :nth-child(4)::after {
     -ms-transition: all 0.5s;
     -o-transition: all 0.5s;
     cursor: pointer;
+    z-index: 1;
 }
 
-.sec1 button:hover {
+button:after {
+    content: "";
+    position: absolute;
+    background: var(--firstColor);
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+
+/* .sec1 button:hover {
     background: var(--firstColor);
     text-decoration: underline;
     border-radius: 10px;
@@ -225,7 +239,7 @@ nav .list :nth-child(4)::after {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-}
+} */
 
 
 /* END OF SECTION 1 */
