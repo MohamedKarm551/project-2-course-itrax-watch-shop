@@ -93,30 +93,31 @@ nav .list li {
     position: absolute;
     top: 100%;
     opacity: 0;
+    visibility: hidden;
     transition: all 0.6s ease;
     -webkit-transition: all 0.6s ease;
     -moz-transition: all 0.6s ease;
     -ms-transition: all 0.6s ease;
     -o-transition: all 0.6s ease;
+    border-radius: 8px;
+    filter: drop-shadow(2px 4px 6px #ccc);
 }
 
 .list-items li {
     padding: 17px;
 }
 
-.list-items::before {
-    content: "";
+nav .list .list-items::before {
+    content: '';
     position: absolute;
-    top: -24%;
-    left: 7%;
-    /* width: 10px; */
-    border-width: 10px;
-    border-style: solid;
-    /* height: 10px; */
-    border-bottom-color: var(--firstColor);
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-left-color: transparent;
+    top: -23px;
+    left: 6px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid #f00;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
 }
 
 nav #menu {
@@ -136,6 +137,7 @@ nav .list li:hover a {
 
 nav .list li:hover .list-items {
     opacity: 1;
+    visibility: visible;
 }
 
 nav .list li:hover .list-items a {
@@ -176,12 +178,12 @@ nav .icons {
     color: var(--firstColor);
 }
 
-nav .list :nth-child(4)::after {
+nav .list .li-for-parent-list:nth-child(4)::after {
     content: "HOT";
     position: absolute;
     color: #fff;
     background-color: var(--firstColor);
-    top: 8%;
+    top: 3%;
     width: 39px;
     /* height: 20px; */
     right: 46%;
@@ -786,7 +788,7 @@ button:hover:after {
         border-radius: unset;
         padding: 10px;
     }
-    nav .list :nth-child(4)::after {
+    nav .list .li-for-parent-list:nth-child(4)::after {
         content: unset;
         position: unset;
         color: unset;
