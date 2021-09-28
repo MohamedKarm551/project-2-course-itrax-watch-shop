@@ -35,18 +35,49 @@ a {
     color: var(--secondColor);
 }
 
-h1::selection {
-    background-color: black;
-    color: gold;
+h1::selection,
+h2::selection,
+h3::selection {
+    background-color: white;
+    color: var(--firstColor);
 }
 
 p::selection {
-    text-shadow: 1px 1px 1px var(--firstColor);
+    background-color: var(--firstColor);
+    color: white;
 }
 
 h1:hover,
 p:hover {
-    text-shadow: 1px 1px gray;
+    text-shadow: 0px 1px var(--secondColor);
+}
+
+.fixed-div {
+    width: 50px;
+    height: 50px;
+    background: red;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 3%;
+    right: 3%;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.fixed-div i {
+    color: white;
+    font-size: 23px;
+}
+
+.fixed-div:hover i {
+    color: var(--firstColor);
+}
+
+.fixed-div:hover {
+    background: white;
 }
 
 
@@ -502,11 +533,354 @@ button:hover:after {
 /* End of SEC3 */
 
 
+/* SEC4 */
+
+.sec4 {
+    margin-top: 5%;
+}
+
+.sec4 .title {
+    text-align: center;
+    margin: auto;
+    /* line-height: 2; */
+    max-width: 64%;
+}
+
+.sec4 .title h3 {
+    color: #000;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.sec4 .title p {
+    font-family: "Roboto", sans-serif;
+    color: #777;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.sec4 .parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 2%;
+}
+
+.sec4 .parent .child {
+    position: relative;
+    /* width: 30%; */
+}
+
+.sec4 .parent .child::after {
+    position: absolute;
+    content: "Add to card";
+    width: 100%;
+    background: red;
+    padding: 20px 0;
+    height: 4%;
+    color: wheat;
+    bottom: 18%;
+    left: 0;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+}
+
+.sec4 .parent .child:hover::after {
+    bottom: 22%;
+    opacity: 1;
+}
+
+.sec4 .parent .child img {
+    width: 100%;
+    border-bottom: 3px solid #ff2020;
+    transition: all .4s ease-out 0s;
+    -webkit-transition: all .4s ease-out 0s;
+    -moz-transition: all .4s ease-out 0s;
+    -ms-transition: all .4s ease-out 0s;
+    -o-transition: all .4s ease-out 0s;
+}
+
+.sec4 .parent .child i {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-size: 30px;
+    color: #333;
+    opacity: 0;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+}
+
+.sec4 .parent .child:hover i {
+    opacity: 1;
+}
+
+.sec4 .parent .child .child-title {
+    text-align: center;
+    margin-top: 6%;
+}
+
+.sec4 .parent .child .child-title h3 {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+
+.sec4 .parent .child .child-title h3 a {
+    color: #444;
+}
+
+.sec4 .parent .child .child-title p {
+    color: #ff2020;
+    font-size: 18px;
+    font-weight: 500;
+    display: block;
+    margin-top: 10%;
+}
+
+.btn {
+    display: flex;
+    margin: 6% auto;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    background: #ff2020;
+    font-family: "Josefin Sans", sans-serif;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: .03em;
+    padding: 30px 28px;
+    border: 0;
+    position: relative;
+    transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.btn a {
+    color: #fff;
+}
+
+.btn::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #4a4a4b;
+    left: 100%;
+    top: 0;
+    z-index: -1;
+}
+
+.btn:hover::after {
+    left: 0;
+}
+
+
+/* End of SEC4 */
+
+.sec5 {
+    position: relative;
+}
+
+.sec5 img {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: -1;
+}
+
+.sec5 .sec5-cont {
+    position: absolute;
+    bottom: 7%;
+    left: 10%;
+    z-index: 1;
+}
+
+.sec5 .sec5-cont p {
+    display: inline-block;
+    position: absolute;
+    right: -129px;
+    font-size: 20px;
+    color: wheat;
+}
+
+.sec5 .sec5-cont i {
+    display: inline-block;
+}
+
+.sec5::after {
+    position: absolute;
+    content: url("https://preview.colorlib.com/theme/timezone/assets/img/gallery/xvidoe_more.png.pagespeed.ic.qi7r8yaMbc.png");
+    bottom: 0;
+    left: 0;
+}
+
+.sec5 .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    cursor: pointer;
+}
+
+i.fas.fa-play.play-icon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border: 2px solid white;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.sec5 .play-icon:hover::after {
+    background-color: white;
+}
+
+.sec5 .play-icon:hover {
+    color: var(--firstColor);
+}
+
+
+/* متنفذتش */
+
+.sec5 .play-icon:hover .sec5 img {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+i.fas.fa-play .arrow {
+    position: absolute;
+    right: -300px;
+    top: -12px;
+    font-size: 20px;
+    color: wheat;
+}
+
+
+/* End of sec5 */
+
+
+/* SEC6 */
+
+.sec6 {}
+
+.sec6 .container,
+.sec7 .container {
+    display: flex;
+    justify-content: space-between !important;
+    align-items: center;
+    padding-bottom: 130px;
+}
+
+.sec6 .sec6-title,
+.sec7 .sec7-title {
+    max-width: 45%;
+}
+
+.sec6 .sec6-title h2,
+.sec7 .sec7-title h2 {
+    color: #000;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 40px;
+}
+
+.sec6 .sec6-title p,
+.sec7 .sec7-title p {
+    font-family: "Roboto", sans-serif;
+    color: #777;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.btn-style {
+    background: #ff2020;
+    font-family: "Josefin Sans", sans-serif;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: .03em;
+    color: white;
+    padding: 30px 28px;
+    border: 0;
+    position: relative;
+    transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.btn-style::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #4a4a4b;
+    left: 100%;
+    top: 0;
+    z-index: -1;
+}
+
+.btn-style:hover::after {
+    left: 0;
+}
+
+.sec6 .sec6-image,
+.sec7 .sec7-image {
+    max-width: 50%;
+}
+
+.sec6 .sec6-image img,
+.sec7 .sec7-image img {
+    width: 100%;
+}
+
+
+/* End of SEC6 */
+
+
+/* SEC 7 */
+
+.sec7 {}
+
+
+/*  End of SEC 7 */
+
+
 /*emoji
 
  */
 
-.emoji {
+
+/* .emoji {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
@@ -571,7 +945,10 @@ button:hover:after {
 .emoji .div3 {
     background: linear-gradient(45deg, #e91e63, #673ab7);
     animation-direction: reverse;
-}
+} */
+
+
+/* End of style for emoji */
 
 
 /* my-checkBox */
@@ -582,7 +959,8 @@ button:hover:after {
 
     https://www.youtube.com/watch?v=7Rjt7Rjyjqw&list=PLwJhhWUZudKoCFi2MyC9ZD6XX082goO_S&index=28&ab_channel=Divinector */
 
-.my-checkBox {
+
+/* .my-checkBox {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -600,9 +978,10 @@ button:hover:after {
     color: wheat;
     width: 30%;
     text-align: center;
-}
+} */
 
-.my-checkBox label {
+
+/* .my-checkBox label {
     background-color: gray;
     cursor: pointer;
     width: 200px;
@@ -610,16 +989,22 @@ button:hover:after {
     border: 5px solid white;
     border-radius: 30px;
     position: relative;
-}
+} */
 
-.my-checkBox input {
+
+/* .my-checkBox input {
     position: relative;
-    left: 27px;
-    /*  */
-    display: none;
-}
+    left: 27px; */
 
-.my-checkBox label::after {
+
+/*  */
+
+
+/* display: none;
+} */
+
+
+/* .my-checkBox label::after {
     content: "on";
     width: 40px;
     height: 40px;
@@ -629,25 +1014,31 @@ button:hover:after {
     -ms-border-radius: 50%;
     position: absolute;
     -o-border-radius: 50%;
-    background-color: #E91E63;
-    /*tocenterthetext*/
-    display: flex;
+    background-color: #E91E63; */
+
+
+/*tocenterthetext*/
+
+
+/* display: flex;
     justify-content: center;
     align-items: center;
     font-size: x-large;
     font-weight: 900;
-}
+} */
 
-.my-checkBox input:checked+label::after {
+
+/* .my-checkBox input:checked+label::after {
     left: 79%;
     content: "off";
     background-color: #4868db;
-}
+} */
 
-.my-checkBox input:checked+label {
+
+/* .my-checkBox input:checked+label {
     background-color: gold;
     border: 5px solid black;
-}
+} */
 
 
 /* flex box */
@@ -728,7 +1119,7 @@ button:hover:after {
         /* position: absolute; */
         /* left: 50%; */
         margin-left: 18%;
-        margin-top: 3%;
+        /* margin-top: 3%; */
         order: 2;
     }
     nav .icons {
@@ -810,6 +1201,11 @@ button:hover:after {
         -o-border-radius: unset;
         -webkit-filter: unset;
     }
+    /* SEC 4 */
+    .btn {
+        width: 400px;
+    }
+    /* End of sec4 */
 }
 
 @media (max-width:767px) {
@@ -839,7 +1235,7 @@ button:hover:after {
     /* SEC2 */
     .sec2 .item {
         max-width: 100%;
-        padding: unset;
+        /* padding: unset; */
         margin: auto
         /* to center it  */
     }
@@ -876,9 +1272,28 @@ button:hover:after {
         margin: auto auto 10% auto
     }
     /* End of SEC3 */
+    /* SEC 4 */
+    .sec4 .parent {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .btn {
+        width: 67%;
+        margin: 15% auto;
+    }
+    /* End of SEC 4 */
 }
 
-@media (max-width:575px) {}
+@media (max-width:575px) {
+    .fa,
+    .fas {
+        padding: 7px;
+    }
+    .sec6 .container,
+    .sec7 .container {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+}
 
 
 /* End of media query */
