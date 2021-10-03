@@ -58,6 +58,10 @@ html {
 .container {
     margin: auto;
     width: 80%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .row {
@@ -147,14 +151,20 @@ nav {
 
 nav .container {
     display: flex;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav .brand {
-    width: 25%;
+    max-width: 25%;
+    flex: 0 0 25%;
 }
 
 nav .list {
-    width: 50%;
+    max-width: 50%;
+    flex: 0 0 50%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -176,6 +186,7 @@ nav .list li {
     background-color: #fff;
     border-top: 6px solid var(--firstColor);
     position: absolute;
+    min-width: 200px;
     top: 100%;
     opacity: 0;
     visibility: hidden;
@@ -239,14 +250,15 @@ nav .list li:hover .list-items a {
 }
 
 nav .list-items li a:hover {
-    margin-left: 1px;
+    margin-left: 5px;
 }
 
 
 /* end hover on li  */
 
 nav .icons {
-    width: 25%;
+    max-width: 25%;
+    flex: 0 0 25%;
     text-align: center;
     align-self: center;
 }
@@ -284,13 +296,38 @@ nav .list .li-for-parent-list:nth-child(4)::after {
     top: 3%;
     width: 39px;
     /* height: 20px; */
-    right: 46%;
+    right: 41%;
     text-align: center;
     border-radius: 11px;
     filter: drop-shadow(2px 4px 6px #ccc);
     font-size: small;
     font-weight: 700;
     padding: 3px 8px;
+}
+
+@media (min-width:1024px) {
+    nav .list li {
+        margin-right: 2%;
+    }
+}
+
+@media (min-width:1150px) {
+    nav .list .li-for-parent-list:nth-child(4)::after {
+        content: "HOT";
+        position: absolute;
+        color: #fff;
+        background-color: var(--firstColor);
+        top: 3%;
+        width: 39px;
+        /* height: 20px; */
+        right: 45%;
+        text-align: center;
+        border-radius: 11px;
+        filter: drop-shadow(2px 4px 6px #ccc);
+        font-size: small;
+        font-weight: 700;
+        padding: 3px 8px;
+    }
 }
 
 
@@ -1008,17 +1045,24 @@ i.fas.fa-play .arrow {
 .sec9 .sec9-items {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    /* align-items: center; */
 }
 
-.sec9 .sec9-items .item {
+
+/* .sec9 .sec9-items .item {
     max-width: 16.666667%;
     flex: 0 0 16.666667%;
-}
+} */
 
-.sec9 .sec9-items .item:first-of-type,
+
+/* .sec9 .sec9-items .item:first-of-type,
 .sec9 .sec9-items .item:nth-child(3),
 .sec9 .sec9-items .item:nth-child(4) {
+    max-width: 25%;
+    flex: 0 0 25%;
+} */
+
+.sec9 .sec9-items .item {
     max-width: 25%;
     flex: 0 0 25%;
 }
@@ -1083,14 +1127,16 @@ i.fas.fa-play .arrow {
 .sec9 svg {
     width: 20px;
     height: 20px;
-    margin: 0 4px 0 8px;
+    margin: 0 10px 3px 8px;
 }
 
 .sec9 .end-of-page p a {
     color: var(--firstColor);
 }
 
-.sec9 .end-of-page .icons {}
+.sec9 .end-of-page .icons {
+    flex: 0 0 30%;
+}
 
 
 /* .sec9 .end-of-page .icons svg {
@@ -1454,13 +1500,22 @@ i.fas.fa-play .arrow {
 }
 
 @media (max-width:767px) {
-    a {
+    /* a {
         color: var(--firstColor);
-    }
-    a:hover {
+    } */
+    /* a:hover {
         color: var(--secondColor) !important;
         /* مرضاش يتطبق غير اما عملت 
         important */
+    /*
+    } */
+    .fa-user-friends:before,
+    .fa-shopping-cart:before,
+    .fa-search:before {
+        background-image: linear-gradient(#9c27b0, #e91e63);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 20px;
     }
     .icons a:hover {
         color: var(--secondColor) !important;
@@ -1526,6 +1581,30 @@ i.fas.fa-play .arrow {
         margin: 15% auto;
     }
     /* End of SEC 4 */
+    /* 
+     */
+    .sec9 .sec9-items {
+        /* align-items: flex-start;
+        flex-direction: column; */
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+    }
+    .sec9 .sec9-items .item:first-of-type {
+        flex: 0 0 50%;
+        max-width: 50%;
+        margin-right: unset;
+    }
+    .sec9 .sec9-items .item:nth-child(2) {
+        flex: 0 0 41.666667%;
+        max-width: 41.666667%;
+    }
+    .sec9 .sec9-items .item:nth-child(3),
+    .sec9 .sec9-items .item:nth-child(4) {
+        flex: 0 0 58.333333%;
+        max-width: 58.333333%;
+    }
 }
 
 @media (max-width:575px) {
