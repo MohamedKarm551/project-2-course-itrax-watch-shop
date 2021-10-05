@@ -57,7 +57,7 @@ html {
 
 .container {
     margin: auto;
-    width: 80%;
+    width: 85%;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
@@ -1093,6 +1093,7 @@ i.fas.fa-play .arrow {
     font-size: 16px;
     margin-bottom: 50px;
     line-height: 1.8;
+    transition: all 0.5s ease;
 }
 
 .sec9 .sec9-items .item ul {}
@@ -1105,6 +1106,7 @@ i.fas.fa-play .arrow {
     color: #868c98;
     font-weight: 400;
     display: inline-block;
+    transition: all 0.5s ease;
 }
 
 .sec9 .sec9-items .item ul li a:hover {
@@ -1136,6 +1138,7 @@ i.fas.fa-play .arrow {
 
 .sec9 .end-of-page .icons {
     flex: 0 0 30%;
+    text-align: right;
 }
 
 
